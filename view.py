@@ -13,11 +13,13 @@ import scalendar
 
 # TODO: add help descriptions for all commands
 
+
 def do_add_cmd(args, controller):
     controller.add_cmd(args)
 
     # Print output to the console
     # TODO
+
 
 def do_remove_cmd(args, controller):
     controller.remove_cmd(args)
@@ -25,11 +27,13 @@ def do_remove_cmd(args, controller):
     # Print output to the console
     # TODO
 
+
 def do_edit_cmd(args, controller):
     controller.edit_cmd(args)
 
     # Print output to the console
     # TODO
+
 
 def do_list_cmd(args, controller):
     controller.list_cmd(args)
@@ -78,7 +82,7 @@ if __name__ == "__main__":
     parser_remove = subparsers.add_parser('remove', aliases=['r', 'rm'])
     parser_edit = subparsers.add_parser('edit', aliases=['e'])
     parser_list = subparsers.add_parser('list', aliases=['l', 'ls'])
-    parser_attr = subparsers.add_parser('attr')
+    parser_getattr = subparsers.add_parser('getattr')
     parser_debug = subparsers.add_parser('debug')
     parser_test = subparsers.add_parser('test')
 
@@ -98,7 +102,6 @@ if __name__ == "__main__":
     # Set function for `add` command to point to
     parser_add.set_defaults(func=do_add_cmd)
 
-
     # --------------------------------------------------
     # remove Args and options
     # --------------------------------------------------
@@ -111,14 +114,12 @@ if __name__ == "__main__":
     parser_remove.set_defaults(func=do_remove_cmd)
 
 
-
     # --------------------------------------------------
     # edit Args and options
     # --------------------------------------------------
 
     # TODO: implement the edit command like so:
     # scal edit "curr item name" --name "new item name" --notes "newitem notes"
-
 
 
     # --------------------------------------------------
@@ -138,11 +139,11 @@ if __name__ == "__main__":
 
     # Create `attr` positional arg slots
     # TODO: implement getting attribute by ID as well
-    parser_attr.add_argument('item_name')
-    parser_attr.add_argument('attr_name')
+    parser_getattr.add_argument('item_name')
+    parser_getattr.add_argument('attr_name')
 
     # Set function for `attr` command to point to
-    parser_attr.set_defaults(func=do_getattr_cmd)
+    parser_getattr.set_defaults(func=do_getattr_cmd)
 
 
     # --------------------------------------------------
@@ -151,7 +152,6 @@ if __name__ == "__main__":
 
     # Set function for `debug` command to point to
     parser_add.set_defaults(func=do_debug_cmd)
-
 
     # --------------------------------------------------
     # test Args and options
@@ -164,7 +164,6 @@ if __name__ == "__main__":
     # --------------------------------------------------
     # Parse args and run program
     # --------------------------------------------------
-
 
     args = parser.parse_args()
     args.func(args, controller)

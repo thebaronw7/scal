@@ -1,1 +1,5 @@
+Entering do_getattr_cmd
+args.item_name =  Item Name
+args.attr_name =  Notes
+Exiting do_getattr_cmd
 TODO: implement more attributes test when the command is implemented
