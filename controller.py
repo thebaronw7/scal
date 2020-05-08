@@ -10,8 +10,8 @@ class Controller:
     the Model.
     """
 
-    def __init__(self, calendar_):
-        self.calendar = calendar_
+    def __init__(self, calendar):
+        self.cal = calendar
 
 
     def add_cmd(self, args):

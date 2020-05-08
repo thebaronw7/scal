@@ -11,28 +11,53 @@ import argparse
 import controller
 import scalendar
 
-# TODO: I may (or may not) have to find a way to not pass the controller as a param
-# here since I don't know how to set expected params in .set_default method
+# TODO: add help descriptions for all commands
+
 def do_add_cmd(args, controller):
     controller.add_cmd(args)
+
+    # Print output to the console
+    # TODO
 
 def do_remove_cmd(args, controller):
     controller.remove_cmd(args)
 
+    # Print output to the console
+    # TODO
+
 def do_edit_cmd(args, controller):
     controller.edit_cmd(args)
+
+    # Print output to the console
+    # TODO
 
 def do_list_cmd(args, controller):
     controller.list_cmd(args)
 
+    # Print output to the console
+    # TODO
+
+
 def do_getattr_cmd(args, controller):
     controller.getattr_cmd(args)
+
+    # Print output to the console
+    # TODO
+
 
 def do_test_cmd(args, controller):
     controller.test_cmd(args)
 
+    # Print output to the console
+    # TODO
+
+
 def do_debug_cmd(args, controller):
     controller.debug_cmd(args)
+
+    # Print output to the console
+    # TODO
+
 
 def main(args):
     """ Main entry point of the app """
