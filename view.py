@@ -76,15 +76,22 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='A simple command-line based calender.')
 
-    subparsers = parser.add_subparsers(title='subcommands', description='valid subcommands', help='TODO: subcommands help')
+    subparsers = parser.add_subparsers(title='subcommands', description='Valid subcommands.', help='TODO: subcommands help')
     # TODO: add descriptions to subparsers if possible
-    parser_add = subparsers.add_parser('add', aliases=['a'])
-    parser_remove = subparsers.add_parser('remove', aliases=['r', 'rm'])
-    parser_edit = subparsers.add_parser('edit', aliases=['e'])
-    parser_list = subparsers.add_parser('list', aliases=['l', 'ls'])
-    parser_getattr = subparsers.add_parser('getattr')
-    parser_debug = subparsers.add_parser('debug')
-    parser_test = subparsers.add_parser('test')
+    parser_add = subparsers.add_parser('add',
+                                       description='Add a calendar item.', aliases=['a'])
+    parser_remove = subparsers.add_parser('remove',
+                                          description='Remove a calendar item.', aliases=['r', 'rm'])
+    parser_edit = subparsers.add_parser('edit',
+                                        description='Edit a calendar item.', aliases=['e'])
+    parser_list = subparsers.add_parser('list',
+                                        description='List calendar items.', aliases=['l', 'ls'])
+    parser_getattr = subparsers.add_parser('getattr',
+                                           description='Get the value of a calendar item attribute.')
+    parser_debug = subparsers.add_parser('debug',
+                                         description='For debug purposes.')
+    parser_test = subparsers.add_parser('test',
+                                        description='Reserved for experimentation.')
 
     # Create a controller and its corresponding calendar
     controller = controller.Controller(scalendar.Scalendar())
@@ -94,10 +101,10 @@ if __name__ == "__main__":
     # --------------------------------------------------
 
     # Create `add` positional arg slots
-    parser_add.add_argument('item_name', default='$UNTITLED_ITEM')
-    parser_add.add_argument('start_time')
-    parser_add.add_argument('end_time')
-    parser_add.add_argument('item_notes', default='')
+    parser_add.add_argument('item_name', help='Name of the calendar item to add', default='$UNTITLED_ITEM')
+    parser_add.add_argument('start_time', help='Start time of the calendar item to add in [yyyy-mm-dd hh:mm] format.')
+    parser_add.add_argument('end_time', help='End time of the calendar item to add in [yyyy-mm-dd hh:mm] format.')
+    parser_add.add_argument('item_notes', help='Notes to be associated with the new calendar item.', default='')
 
     # Set function for `add` command to point to
     parser_add.set_defaults(func=do_add_cmd)
@@ -107,8 +114,8 @@ if __name__ == "__main__":
     # --------------------------------------------------
 
     # Create `remove` positional arg slots
-    # TODO: implement ability to specify int item ID to delete instead (as a flag) option
-    parser_remove.add_argument('item_name')
+    # TODO: implement ability to specify int item ID to delete instead (as a flag) option. Int should actually be default and the name version a flag.
+    parser_remove.add_argument('item_name', help='Name of the calendar item to be removed.')
 
     # Set function for `add` command to point to
     parser_remove.set_defaults(func=do_remove_cmd)
@@ -127,11 +134,10 @@ if __name__ == "__main__":
     # --------------------------------------------------
 
     # Create `list` positional arg slots
-    parser_list.add_argument('date_slice')  # TODO: make sure date slice is comma separated to allow for time/date slice in the future.
+    parser_list.add_argument('date_slice', help='An interval representing a date. Choices --\n [\',\' (for all calendar items),\n \'yyyy-mm-dd\' (for calendar items that begin or end ON the specified day),\n \'yyyy-mm-dd,\' (for calendar items that begin or end AFTER the specified day), \n \',yyyy-mm-dd\' (for calendar items that begin ore end BEFORE the specified day), \n \'yyyy-mm-dd,yyyy-mm-dd\' (for calendar items that begin or end ON THE CLOSED INTERVAL.)]')  # TODO: make sure date slice is comma separated to allow for time/date slice in the future.
 
     # Set function for `list` command to point to
     parser_list.set_defaults(func=do_list_cmd)
-
 
     # --------------------------------------------------
     # attr Args and options
@@ -139,8 +145,8 @@ if __name__ == "__main__":
 
     # Create `attr` positional arg slots
     # TODO: implement getting attribute by ID as well
-    parser_getattr.add_argument('item_name')
-    parser_getattr.add_argument('attr_name')
+    parser_getattr.add_argument('item_name', help='The name of a calendar item.')
+    parser_getattr.add_argument('attr_name', help='The name of the attribute to get.')
 
     # Set function for `attr` command to point to
     parser_getattr.set_defaults(func=do_getattr_cmd)
