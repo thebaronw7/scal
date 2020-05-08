@@ -77,7 +77,7 @@ scal [global-options] [command] [command-options] [command-args]
 ```
 
 
-### del (command)
+### del (command) RENAMED: `rm` -- to avoid python keyword collision
 
 ```sh
 
@@ -129,7 +129,7 @@ scal [global-options] [command] [command-options] [command-args]
 
 [list-args]
     (
-        (none)                   ==> List all items on this calendar
+        :                        ==> List all items on this calendar
         yyyy-mm-dd               ==> List all items that start or end on this day
         yyyy-mm-dd:yyyy-mm-dd    ==> List all items that start or end on this interval
         yyyy-mm-dd:              ==> List all items that start or end on or after this day
