@@ -1,0 +1,2 @@
+Entering do_debug_cmd
+Exiting do_debug_cmd

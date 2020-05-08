@@ -1,0 +1,24 @@
+List all events
+---------------
+Entering do_list_cmd
+args.date_slice =  :
+Exiting do_list_cmd
+
+List events on closed interval
+------------------------------
+Entering do_list_cmd
+args.date_slice =  2022-04-22,2022-05-01
+Exiting do_list_cmd
+
+List events ahead of date
+----------------------------------------------
+Entering do_list_cmd
+args.date_slice =  2022-04-22,
+Exiting do_list_cmd
+
+List events prior to date
+----------------------------------------------
+Entering do_list_cmd
+args.date_slice =  ,2022-05-01
+Exiting do_list_cmd
+

@@ -1,0 +1,83 @@
+#!/bin/bash
+
+#==============================================
+# Run `add` command
+#==============================================
+
+
+echo "======================"
+echo "Running 'add' command"
+echo "======================"
+
+python3 ../view.py add "Item Name" "2022-04-22 01:00" "2022-04-22 13:00" "These are notes for the item Item Name" | tee add_results.txt
+
+#==============================================
+# Run `remove` command
+#==============================================
+
+
+echo "========================"
+echo "Running 'remove' command"
+echo "========================"
+
+python3 ../view.py remove "Item Name" | tee remove_results.txt
+
+
+#==============================================
+# Run `edit` command
+#==============================================
+
+
+echo "======================"
+echo "Running 'edit' command"
+echo "======================"
+
+echo "TODO"
+
+#==============================================
+# Run `list` command
+#==============================================
+
+
+echo "======================"
+echo "Running 'list' command"
+echo "======================"
+
+rm list_results.txt
+
+echo "List all events" | tee -a list_results.txt
+echo "---------------" | tee -a list_results.txt
+python3 ../view.py list : | tee -a list_results.txt
+echo "" | tee -a list_results.txt
+
+echo "List events on closed interval" | tee -a list_results.txt
+echo "------------------------------" | tee -a list_results.txt
+python3 ../view.py list 2022-04-22,2022-05-01 | tee -a list_results.txt
+echo "" | tee -a list_results.txt
+
+echo "List events ahead of date" | tee -a list_results.txt
+echo "----------------------------------------------" | tee -a list_results.txt
+python3 ../view.py list 2022-04-22, | tee -a list_results.txt
+echo "" | tee -a list_results.txt
+
+echo "List events prior to date" | tee -a list_results.txt
+echo "----------------------------------------------" | tee -a list_results.txt
+python3 ../view.py list ,2022-05-01 | tee -a list_results.txt
+echo "" | tee -a list_results.txt
+
+
+
+
+#==============================================
+# Run `getattr` command
+#==============================================
+
+
+echo "========================="
+echo "Running 'getattr' command"
+echo "========================="
+
+rm getattr_results.txt
+python3 ../view.py getattr "Item Name" "Notes" | tee -a getattr_results.txt
+echo "TODO: implement more attributes test when the command is implemented" | tee -a getattr_results.txt
+

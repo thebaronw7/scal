@@ -126,7 +126,7 @@ if __name__ == "__main__":
     # --------------------------------------------------
 
     # Create `list` positional arg slots
-    parser_list.add_argument('date_slice')
+    parser_list.add_argument('date_slice')  # TODO: make sure date slice is comma separated to allow for time/date slice in the future.
 
     # Set function for `list` command to point to
     parser_list.set_defaults(func=do_list_cmd)
