@@ -11,8 +11,6 @@ import argparse
 import controller
 import scalendar
 
-# TODO: add help descriptions for all commands
-
 
 def do_add_cmd(args, controller):
     controller.add_cmd(args)
@@ -115,7 +113,7 @@ if __name__ == "__main__":
 
     # Create `remove` positional arg slots
     # TODO: implement ability to specify int item ID to delete instead (as a flag) option. Int should actually be default and the name version a flag.
-    parser_remove.add_argument('item_name', help='Name of the calendar item to be removed.')
+    parser_remove.add_argument('item_id', help='Unique string id of calendar item to be removed.')
 
     # Set function for `add` command to point to
     parser_remove.set_defaults(func=do_remove_cmd)
@@ -125,9 +123,15 @@ if __name__ == "__main__":
     # edit Args and options
     # --------------------------------------------------
 
-    # TODO: implement the edit command like so:
     # scal edit "curr item name" --name "new item name" --notes "newitem notes"
 
+    parser_edit.add_argument('item_id', help='Unique string ID of the item to edit.')
+    parser_edit.add_argument('--n', help='Edit name')
+    parser_edit.add_argument('--s', help='Edit start time')
+    parser_edit.add_argument('--e', help='Edit end time')
+    parser_edit.add_argument('--N', help='Edit notes')
+
+    parser_edit.set_defaults(func=do_edit_cmd)
 
     # --------------------------------------------------
     # list Args and options
@@ -145,7 +149,7 @@ if __name__ == "__main__":
 
     # Create `attr` positional arg slots
     # TODO: implement getting attribute by ID as well
-    parser_getattr.add_argument('item_name', help='The name of a calendar item.')
+    parser_getattr.add_argument('item_id', help='The id of a calendar item.')
     parser_getattr.add_argument('attr_name', help='The name of the attribute to get.')
 
     # Set function for `attr` command to point to
