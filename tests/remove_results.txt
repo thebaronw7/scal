@@ -1,3 +1,3 @@
 Entering do_remove_cmd
-args.item_name =  Item Name
+args.item_id =  asdf
 Exiting do_remove_cmd

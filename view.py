@@ -126,10 +126,10 @@ if __name__ == "__main__":
     # scal edit "curr item name" --name "new item name" --notes "newitem notes"
 
     parser_edit.add_argument('item_id', help='Unique string ID of the item to edit.')
-    parser_edit.add_argument('--n', help='Edit name')
-    parser_edit.add_argument('--s', help='Edit start time')
-    parser_edit.add_argument('--e', help='Edit end time')
-    parser_edit.add_argument('--N', help='Edit notes')
+    parser_edit.add_argument('-n', '--name', help='Edit name')
+    parser_edit.add_argument('-s', '--starttime', help='Edit start time')
+    parser_edit.add_argument('-e', '--endtime', help='Edit end time')
+    parser_edit.add_argument('-N', '--notes', help='Edit notes')
 
     parser_edit.set_defaults(func=do_edit_cmd)
 
