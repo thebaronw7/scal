@@ -10,8 +10,8 @@ class Controller:
     the Model.
     """
 
-    def __init__(self, calendar):
-        self.cal = calendar
+    def __init__(self, scalendar):
+        self.scal = scalendar
 
     def add_cmd(self, args):
         print('Entering do_add_cmd')

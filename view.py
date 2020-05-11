@@ -92,7 +92,7 @@ if __name__ == "__main__":
                                         description='Reserved for experimentation.')
 
     # Create a controller and its corresponding calendar
-    controller = controller.Controller(scalendar.Scalendar())
+    controller = controller.Controller(scalendar.Scalendar('TODO:DEFAULT_CAL_NAME'))
 
     # --------------------------------------------------
     # add Args and options
@@ -154,7 +154,6 @@ if __name__ == "__main__":
 
     # Set function for `attr` command to point to
     parser_getattr.set_defaults(func=do_getattr_cmd)
-
 
     # --------------------------------------------------
     # debug Args and options

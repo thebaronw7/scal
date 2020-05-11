@@ -18,6 +18,8 @@ DATE: 05/07/2020
 * Language: Python3
 * Libraries and existing code bases:
      * arg-parse
+     * python3 datetime module
+     * python3 calendar module
 * Commands correspond exactly to functions, option-flags correspond exactly to parameters. This allows for less abstraction and more hackability.
      
 
