@@ -2,6 +2,8 @@
 Module docstring TODO
 """
 
+import scalendar
+
 
 class Controller:
     """
@@ -15,40 +17,66 @@ class Controller:
 
     def add_cmd(self, args):
         print('Entering do_add_cmd')
-        print('args.item_name = ', args.item_name)
-        print('args.start_time = ', args.start_time)
-        print('args.end_time = ', args.end_time)
-        print('args.item_notes = ', args.item_notes)
-        print('Exiting do_add_cmd')
+        print('args = ', args)
+
+        # TODO: load vars with correct values from args
+        name = None
+        start_datetime = None
+        end_datetime = None
+        notes = None
+
+        return self.scal.add_item(name, start_datetime,
+                                  end_datetime, notes)
 
     def remove_cmd(self, args):
         print('Entering do_remove_cmd')
-        print('args.item_id = ', args.item_id)
-        print('Exiting do_remove_cmd')
+        print('args = ', args)
+
+        # TODO: load vars with correct values from args
+        calitem_id = None
+        return self.scal.remove_item(calitem_id)
 
     def edit_cmd(self, args):
-        print('args', args)
         print('Entering do_edit_cmd')
-        print('TODO')
-        print('Exiting do_edit_cmd')
+        print('args = ', args)
+
+        # TODO: load vars with correct values from args
+        calitem_id = None
+        name = None
+        start_time = None
+        end_time = None
+        notes = None
+        return self.scal.edit_item(calitem_id, name,
+                                   start_time, end_time, notes)
 
     def list_cmd(self, args):
         print('Entering do_list_cmd')
-        print('args.date_slice = ', args.date_slice)
-        print('Exiting do_list_cmd')
+        print('args = ', args)
+
+        # TODO: load vars with correct values from args
+        start_time = None
+        end_time = None
+        calitem_id = None
+
+        return self.scal.list_items(start_time,
+                                    end_time, calitem_id)
 
     def getattr_cmd(self, args):
         print('Entering do_getattr_cmd')
-        print('args.item_id = ', args.item_id)
-        print('args.attr_name = ', args.attr_name)
+        print('args = ', args)
+        # TODO: implement later (low priority)
         print('Exiting do_getattr_cmd')
 
     def test_cmd(self, args):
-        print('do_test_cmd run!', args.testarg_int * -1)
+        print('args = ', args)
+        pass
 
     def debug_cmd(self, args):
         print('Entering do_debug_cmd')
+        print('args = ', args)
         print('Exiting do_debug_cmd')
 
-    def debugprint(self):
-        print('This is the controller', self)
+
+
+
+

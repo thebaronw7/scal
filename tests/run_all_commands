@@ -4,10 +4,11 @@
 # Run `add` command
 #==============================================
 
-
-echo "======================"
+echo ""
+echo "========================================="
 echo "Running 'add' command"
-echo "======================"
+echo "========================================="
+echo ""
 
 python3 ../view.py add "Item Name" "2022-04-22 01:00" "2022-04-22 13:00" "These are notes for the item Item Name" | tee add_results.txt
 
@@ -16,9 +17,11 @@ python3 ../view.py add "Item Name" "2022-04-22 01:00" "2022-04-22 13:00" "These 
 #==============================================
 
 
-echo "========================"
+echo ""
+echo "========================================="
 echo "Running 'remove' command"
-echo "========================"
+echo "========================================="
+echo ""
 
 python3 ../view.py remove "asdf" | tee remove_results.txt
 
@@ -28,21 +31,25 @@ python3 ../view.py remove "asdf" | tee remove_results.txt
 #==============================================
 
 
-echo "======================"
+echo ""
+echo "========================================="
 echo "Running 'edit' command"
-echo "======================"
+echo "========================================="
+echo ""
 
 rm edit_results.txt
-python3 ../view.py edit asdf -n hjkl -s "2021-06-06 6:06" -e "2021-06-07 7:07" -N "New notes" | tee -a edit_results.txt
+python3 ../view.py edit asdf -n "new name" -s "2021-06-06 6:06" -e "2021-06-07 7:07" -N "New notes" | tee -a edit_results.txt
 
 #==============================================
 # Run `list` command
 #==============================================
 
 
-echo "======================"
+echo ""
+echo "========================================="
 echo "Running 'list' command"
-echo "======================"
+echo "========================================="
+echo ""
 
 rm list_results.txt
 
@@ -76,9 +83,11 @@ echo "" | tee -a list_results.txt
 #==============================================
 
 
-echo "========================="
+echo ""
+echo "========================================="
 echo "Running 'getattr' command"
-echo "========================="
+echo "========================================="
+echo ""
 
 rm getattr_results.txt
 python3 ../view.py getattr "asdf" "Notes" | tee -a getattr_results.txt

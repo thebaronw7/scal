@@ -1,3 +1,2 @@
 Entering do_remove_cmd
-args.item_id =  asdf
-Exiting do_remove_cmd
+args =  Namespace(func=<function do_remove_cmd at 0x7fa0ff2c1ae8>, item_id='asdf')
