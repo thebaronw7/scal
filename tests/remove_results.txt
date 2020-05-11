@@ -1,2 +1,3 @@
 Entering do_remove_cmd
-args =  Namespace(func=<function do_remove_cmd at 0x7fa0ff2c1ae8>, item_id='asdf')
+args =  Namespace(func=<function do_remove_cmd at 0x7fad76861ae8>, item_id='asdf')
+<scalendar.CalItem object at 0x7fad767ded68>

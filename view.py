@@ -13,42 +13,42 @@ import scalendar
 
 
 def do_add_cmd(args, controller):
-    controller.add_cmd(args)
+    result = controller.add_cmd(args)
 
     # Print output to the console
-    # TODO
+    print(result)  # TODO: print actual results
 
 
 def do_remove_cmd(args, controller):
-    controller.remove_cmd(args)
+    result = controller.remove_cmd(args)
 
     # Print output to the console
-    # TODO
+    print(result)  # TODO: print actual results
 
 
 def do_edit_cmd(args, controller):
-    controller.edit_cmd(args)
+    result = controller.edit_cmd(args)
 
     # Print output to the console
-    # TODO
+    print(result)  # TODO: print actual results
 
 
 def do_list_cmd(args, controller):
-    controller.list_cmd(args)
+    result = controller.list_cmd(args)
 
     # Print output to the console
-    # TODO
+    print(result)  # TODO: print actual results
 
 
 def do_getattr_cmd(args, controller):
-    controller.getattr_cmd(args)
+    result = controller.getattr_cmd(args)
 
     # Print output to the console
-    # TODO
+    print(result)  # TODO: print actual results
 
 
 def do_test_cmd(args, controller):
-    controller.test_cmd(args)
+   controller.test_cmd(args)
 
     # Print output to the console
     # TODO
@@ -148,7 +148,6 @@ if __name__ == "__main__":
     # --------------------------------------------------
 
     # Create `attr` positional arg slots
-    # TODO: implement getting attribute by ID as well
     parser_getattr.add_argument('item_id', help='The id of a calendar item.')
     parser_getattr.add_argument('attr_name', help='The name of the attribute to get.')
 
@@ -165,7 +164,6 @@ if __name__ == "__main__":
     # --------------------------------------------------
     # test Args and options
     # --------------------------------------------------
-
 
     parser_test.add_argument('testarg_int', type=int, default=1)
     parser_test.set_defaults(func=do_test_cmd)

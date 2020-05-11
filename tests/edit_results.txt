@@ -1,2 +1,3 @@
 Entering do_edit_cmd
-args =  Namespace(endtime='2021-06-07 7:07', func=<function do_edit_cmd at 0x7fc26e3ff0d0>, item_id='asdf', name='new name', notes='New notes', starttime='2021-06-06 6:06')
+args =  Namespace(endtime='2021-06-07 7:07', func=<function do_edit_cmd at 0x7f66fd9060d0>, item_id='asdf', name='new name', notes='New notes', starttime='2021-06-06 6:06')
+<scalendar.CalItem object at 0x7f66fd878e48>

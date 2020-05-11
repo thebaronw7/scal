@@ -1,4 +1,5 @@
 Entering do_getattr_cmd
-args =  Namespace(attr_name='Notes', func=<function do_getattr_cmd at 0x7f42969921e0>, item_id='asdf')
+args =  Namespace(attr_name='Notes', func=<function do_getattr_cmd at 0x7f7e20a7f1e0>, item_id='asdf')
 Exiting do_getattr_cmd
+None
 TODO: implement more attributes test when the command is implemented

@@ -1,20 +1,24 @@
 List all events
 ---------------
 Entering do_list_cmd
-args =  Namespace(date_slice=':', func=<function do_list_cmd at 0x7f7f3c2a7158>)
+args =  Namespace(date_slice=':', func=<function do_list_cmd at 0x7fe27f2b3158>)
+['this list will eventually be filled with calendar items']
 
 List events on closed interval
 ------------------------------
 Entering do_list_cmd
-args =  Namespace(date_slice='2022-04-22,2022-05-01', func=<function do_list_cmd at 0x7fbaa150f158>)
+args =  Namespace(date_slice='2022-04-22,2022-05-01', func=<function do_list_cmd at 0x7fc710fc8158>)
+['this list will eventually be filled with calendar items']
 
 List events ahead of date
 ----------------------------------------------
 Entering do_list_cmd
-args =  Namespace(date_slice='2022-04-22,', func=<function do_list_cmd at 0x7f7b7e6b0158>)
+args =  Namespace(date_slice='2022-04-22,', func=<function do_list_cmd at 0x7fdc699fc158>)
+['this list will eventually be filled with calendar items']
 
 List events prior to date
 ----------------------------------------------
 Entering do_list_cmd
-args =  Namespace(date_slice=',2022-05-01', func=<function do_list_cmd at 0x7f758817f158>)
+args =  Namespace(date_slice=',2022-05-01', func=<function do_list_cmd at 0x7f8b70302158>)
+['this list will eventually be filled with calendar items']
 
